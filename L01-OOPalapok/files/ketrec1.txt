@@ -1,0 +1,8 @@
+Kormos,hím,20,Kutya
+Mici,nőstény,320,Panda
+Morzsi,hím,40,Kutya
+Bundás,hím,3,Kutya
+Bajnok,hím,5,Kutya
+Bogyó,nőstény,10,Nyúl
+Füli,hím,15,Nyúl
+Bajnok,hím,420,Panda

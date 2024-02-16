@@ -1,0 +1,3 @@
+Papa,hím,121,Panda
+TapsiHapsi,nőstény,5,Nyúl
+Foxi,hím,11,Kutya
