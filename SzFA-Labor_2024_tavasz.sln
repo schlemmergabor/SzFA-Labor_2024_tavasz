@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L01-OOPalapok", "L01-OOPalapok\L01-OOPalapok.csproj", "{2095C113-7850-4C64-84CD-2BA0AC5EE582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L02-Oroklodes", "L02-Oroklodes\L02-Oroklodes.csproj", "{9FAA41FD-E990-4358-AFFA-E5E4A8E8E3E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L02-Oroklodes", "L02-Oroklodes\L02-Oroklodes.csproj", "{9FAA41FD-E990-4358-AFFA-E5E4A8E8E3E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L03-Interface", "L03-Interface\L03-Interface.csproj", "{E222DF13-46FA-4CCF-89E5-FE94FC5F3BCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9FAA41FD-E990-4358-AFFA-E5E4A8E8E3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FAA41FD-E990-4358-AFFA-E5E4A8E8E3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FAA41FD-E990-4358-AFFA-E5E4A8E8E3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E222DF13-46FA-4CCF-89E5-FE94FC5F3BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E222DF13-46FA-4CCF-89E5-FE94FC5F3BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E222DF13-46FA-4CCF-89E5-FE94FC5F3BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E222DF13-46FA-4CCF-89E5-FE94FC5F3BCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
