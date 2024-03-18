@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L02-Oroklodes", "L02-Oroklo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L03-Interface", "L03-Interface\L03-Interface.csproj", "{E222DF13-46FA-4CCF-89E5-FE94FC5F3BCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04-NUnit", "L04-NUnit\L04-NUnit.csproj", "{8EB20A45-8853-4F71-AC50-E3FA5D5834E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L04-NUnit", "L04-NUnit\L04-NUnit.csproj", "{8EB20A45-8853-4F71-AC50-E3FA5D5834E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04-NUnit_Tester", "L04-NUnit_Tester\L04-NUnit_Tester.csproj", "{208A141C-2083-4313-A38C-898AA2C2F8E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L04-NUnit_Tester", "L04-NUnit_Tester\L04-NUnit_Tester.csproj", "{208A141C-2083-4313-A38C-898AA2C2F8E6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L05-Kivetel", "L05-Kivetel\L05-Kivetel.csproj", "{DE1DD12F-2AD1-4AA1-AEB9-C26E26961726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L05-Kivetel_Tester", "L05-Kivetel_Tester\L05-Kivetel_Tester.csproj", "{9B5720AD-0E4E-4526-A8DF-ECC502730795}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{208A141C-2083-4313-A38C-898AA2C2F8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{208A141C-2083-4313-A38C-898AA2C2F8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{208A141C-2083-4313-A38C-898AA2C2F8E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE1DD12F-2AD1-4AA1-AEB9-C26E26961726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE1DD12F-2AD1-4AA1-AEB9-C26E26961726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE1DD12F-2AD1-4AA1-AEB9-C26E26961726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE1DD12F-2AD1-4AA1-AEB9-C26E26961726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5720AD-0E4E-4526-A8DF-ECC502730795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5720AD-0E4E-4526-A8DF-ECC502730795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5720AD-0E4E-4526-A8DF-ECC502730795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5720AD-0E4E-4526-A8DF-ECC502730795}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
