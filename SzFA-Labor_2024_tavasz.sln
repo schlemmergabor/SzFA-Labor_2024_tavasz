@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L06-MintaZH1_Tester", "L06-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L08-ProgTetelekGyakorlasa", "L08-ProgTetelekGyakorlasa\L08-ProgTetelekGyakorlasa.csproj", "{F4AE0365-C912-4BA1-B64E-143AC4073CDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L09-TrainingCosts", "L09-TrainingCosts\L09-TrainingCosts.csproj", "{1CDEFD10-B433-4981-AB03-1847430A41B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L09-TrainingCostsTests", "L09-TrainingCostsTests\L09-TrainingCostsTests.csproj", "{DED12D82-083C-4306-AD82-E4872EDFF7DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{F4AE0365-C912-4BA1-B64E-143AC4073CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4AE0365-C912-4BA1-B64E-143AC4073CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4AE0365-C912-4BA1-B64E-143AC4073CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDEFD10-B433-4981-AB03-1847430A41B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDEFD10-B433-4981-AB03-1847430A41B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDEFD10-B433-4981-AB03-1847430A41B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDEFD10-B433-4981-AB03-1847430A41B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED12D82-083C-4306-AD82-E4872EDFF7DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED12D82-083C-4306-AD82-E4872EDFF7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED12D82-083C-4306-AD82-E4872EDFF7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED12D82-083C-4306-AD82-E4872EDFF7DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
