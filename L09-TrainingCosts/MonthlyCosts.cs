@@ -139,7 +139,7 @@ namespace L09_TrainingCosts
             int maxIndex = 0;
             for (int i = 1; i < TrainingCosts.Length; i++)
             {
-                if (TrainingCosts[i]?.Cost> TrainingCosts[maxIndex]?.Cost)
+                if (TrainingCosts[i]?.Cost > TrainingCosts[maxIndex]?.Cost)
                 {
                     maxIndex = i;
                 }
@@ -190,11 +190,138 @@ namespace L09_TrainingCosts
 
             // átméretezzük a result tömböt -> levágjuk a felesleges hátsó indexeket
             Array.Resize(ref result, db);
-            
+
             // és így már egy olyan tömbbel térünk vissza amiben csak annyi elem van
             // ahány max érték van
             return result;
-
         }
+
+        public TrainingCost LegnagyobbFeltétellel(Predicate<TrainingCost> pre)
+        {
+            // kezdeti legnagyobb érték - végtelen
+            int maxErtek = int.MinValue;
+            // kezdetben nincs maximum
+            int maxIndex = -1;
+
+            for (int i = 0; i < TrainingCosts.Length; i++)
+            {
+                // ha teljesíti a feltételt
+                if (pre(TrainingCosts[i]))
+                {
+                    // találtunk új max értéket
+                    if (TrainingCosts[i].Cost > maxErtek)
+                    {
+                        maxErtek = TrainingCosts[i].Cost;
+                        maxIndex = i;
+                    }
+                }
+            }
+
+            // ha nem találtunk a feltételnek megfelelőt
+            // vagy 0 volt a TrainingCosts.Length -> null
+            if (maxIndex == -1) return null;
+
+            return TrainingCosts[maxIndex];
+        }
+
+        public TrainingCost LegnagyobbSulyozassal()
+        {
+            // kezdeti legnagyobb érték - végtelen
+            int maxErtek = int.MinValue;
+            // kezdetben nincs maximum
+            int maxIndex = -1;
+
+            for (int i = 0; i < TrainingCosts.Length; i++)
+            {
+                // cost-ok súlyozása
+                int cost = TrainingCosts[i].Cost;
+
+                // ebben az esetben 2x-es osztó van
+                if (TrainingCosts[i].Type == TrainingType.Cycling
+                    || TrainingCosts[i].Type == TrainingType.Running)
+                    cost /= 2;
+
+                if (cost > maxErtek) maxIndex = i;
+            }
+
+            // vagy 0 volt a TrainingCosts.Length -> null
+            if (maxIndex == -1) return null;
+
+            return TrainingCosts[maxIndex];
+        }
+
+
+        // adott feltételnek eleget tevők indexei
+        public int[] FeltételesIndexek(Predicate<TrainingCost> pre)
+        {
+            // részletes leírást lásd a public int[] Maxok() metódusnál
+            int[] result = new int[TrainingCosts.Length];
+
+            // hány db feltételnek eleget tevő elem van
+            int db = 0;
+
+            for (int i = 0; i < TrainingCosts.Length; i++)
+            {
+                if (pre(TrainingCosts[i]))
+                {
+                    result[db++] = i;
+                }
+            }
+
+            Array.Resize(ref result, db);
+            return result;
+        }
+
+        // adott feltételnek eleget tevők minden adata 
+        // ugyanaz, mint előbb csak a visszatérési érték más
+        public TrainingCost[] FeltételesElemek(Predicate<TrainingCost> pre)
+        {
+            // részletes leírást lásd a public int[] Maxok() metódusnál
+            TrainingCost[] result = new TrainingCost[TrainingCosts.Length];
+
+            // hány db feltételnek eleget tevő elem van
+            int db = 0;
+
+            for (int i = 0; i < TrainingCosts.Length; i++)
+            {
+                if (pre(TrainingCosts[i]))
+                {
+                    result[db++] = TrainingCosts[i];
+                }
+            }
+
+            Array.Resize(ref result, db);
+            return result;
+        }
+
+        // adott feltételt teljesítőket előre helyező metódus
+        // Szétválogat helyben prog.tétel
+        public void Rendez(Predicate<TrainingCost> pre)
+        {
+            int bal = 0;
+            int jobb = TrainingCosts.Length - 1;
+
+            TrainingCost segéd = TrainingCosts[0];
+
+            while (bal < jobb)
+            {
+                while ((bal < jobb) && !pre(TrainingCosts[jobb])) jobb--;
+
+                if (bal < jobb)
+                {
+                    TrainingCosts[bal] = TrainingCosts[jobb];
+                    bal++;
+
+                    while ((bal < jobb) && pre(TrainingCosts[jobb])) bal++;
+                    if (bal < jobb)
+                    {
+                        TrainingCosts[jobb] = TrainingCosts[bal];
+                        jobb--;
+                    }
+                }
+            }
+            TrainingCosts[bal] = segéd;
+        }
+
     }
 }

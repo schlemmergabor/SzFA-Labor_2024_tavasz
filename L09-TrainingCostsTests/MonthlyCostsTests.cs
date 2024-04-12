@@ -110,7 +110,7 @@ namespace L09_TrainingCostsTests
         [TestCase("02", -1)]
         public void LegnagyobbTeszt(string honap, int index)
         {
-            MonthlyCosts c = MonthlyCosts.LoadFrom(@"..\..\..\csv_files\2024_"+honap+".csv");
+            MonthlyCosts c = MonthlyCosts.LoadFrom(@"..\..\..\csv_files\2024_" + honap + ".csv");
             if (index == -1)
             {
                 Assert.Throws<ZeroLengthArrayException>(() => c.Legnagyobb());
@@ -122,8 +122,8 @@ namespace L09_TrainingCostsTests
         }
 
 
-        [TestCase("01", new int[] { 5})]
-        [TestCase("03", new int[] {0, 1, 5})]
+        [TestCase("01", new int[] { 5 })]
+        [TestCase("03", new int[] { 0, 1, 5 })]
         public void MaxokTeszt(string honap, int[] vart)
         {
             MonthlyCosts c = MonthlyCosts.LoadFrom(@"..\..\..\csv_files\2024_" + honap + ".csv");
@@ -131,6 +131,51 @@ namespace L09_TrainingCostsTests
             ;
             Assert.That(c.Maxok(), Is.EqualTo(vart));
         }
+
+        [TestCase("01", TrainingType.Swimming, 5)]
+        [TestCase("02", TrainingType.Running, -1)]
+        [TestCase("01", TrainingType.Cycling, 0)]
+        public void LegnagyobbFeltétellelTeszt(string honap, TrainingType t, int vart)
+        {
+            MonthlyCosts c = MonthlyCosts.LoadFrom(@"..\..\..\csv_files\2024_" + honap + ".csv");
+            if (vart == -1)
+            {
+                Assert.IsNull(c.LegnagyobbFeltétellel(b => b.Cost > 0));
+            }
+            else
+            {
+                Assert.That(c.LegnagyobbFeltétellel(b => b.Type == t), Is.EqualTo(c.TrainingCosts[vart]));
+            }
+        }
+
+        [TestCase("01", 5)]
+        [TestCase("02", -1)]
+        [TestCase("03", 5)]
+        public void LegnagyobbSulyozassalTeszt(string honap, int vart)
+        {
+            MonthlyCosts c = MonthlyCosts.LoadFrom(@"..\..\..\csv_files\2024_" + honap + ".csv");
+            if (vart == -1)
+            {
+                Assert.IsNull(c.LegnagyobbSulyozassal());
+            }
+            else
+            {
+                Assert.That(c.LegnagyobbSulyozassal(), Is.EqualTo(c.TrainingCosts[vart]));
+            }
+        }
+
+        [TestCase("01", new int[] { 0,2,5 })]
+        [TestCase("02", new int[] {  })]
+        public void FeltételesIndexekTeszt(string honap, int[] vart)
+        {
+            MonthlyCosts c = MonthlyCosts.LoadFrom(@"..\..\..\csv_files\2024_" + honap + ".csv");
+
+            Assert.That(c.FeltételesIndexek(p => p.Cost > 10000), Is.EqualTo(vart));
+        }
+
+        
+
+
 
     }
 }
