@@ -27,9 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L09-TrainingCosts", "L09-Tr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L09-TrainingCostsTests", "L09-TrainingCostsTests\L09-TrainingCostsTests.csproj", "{DED12D82-083C-4306-AD82-E4872EDFF7DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L10-Rendezes", "L10-Rendezes\L10-Rendezes.csproj", "{377D29E4-1735-44A1-98FF-FD4476C3B656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L10-Rendezes", "L10-Rendezes\L10-Rendezes.csproj", "{377D29E4-1735-44A1-98FF-FD4476C3B656}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L10-Rendezes_Tests", "L10-Rendezes_Tests\L10-Rendezes_Tests.csproj", "{9BBDA53B-5D02-47D0-BA6A-D0744A7FDD59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L10-Rendezes_Tests", "L10-Rendezes_Tests\L10-Rendezes_Tests.csproj", "{9BBDA53B-5D02-47D0-BA6A-D0744A7FDD59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L11-Halmazok", "L11-Halmazok\L11-Halmazok.csproj", "{C867F786-3A1F-47F2-9EB6-D2173BAD1CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L11-Halmazok_Tests", "L11-Halmazok_Tests\L11-Halmazok_Tests.csproj", "{A6BA83C1-150A-47F9-95E6-B1A115E82828}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,14 @@ Global
 		{9BBDA53B-5D02-47D0-BA6A-D0744A7FDD59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BBDA53B-5D02-47D0-BA6A-D0744A7FDD59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BBDA53B-5D02-47D0-BA6A-D0744A7FDD59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C867F786-3A1F-47F2-9EB6-D2173BAD1CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C867F786-3A1F-47F2-9EB6-D2173BAD1CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C867F786-3A1F-47F2-9EB6-D2173BAD1CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C867F786-3A1F-47F2-9EB6-D2173BAD1CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6BA83C1-150A-47F9-95E6-B1A115E82828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6BA83C1-150A-47F9-95E6-B1A115E82828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6BA83C1-150A-47F9-95E6-B1A115E82828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6BA83C1-150A-47F9-95E6-B1A115E82828}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
