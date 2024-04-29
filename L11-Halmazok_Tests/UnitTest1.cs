@@ -115,7 +115,7 @@ namespace L11_Halmazok_Tests
         // Unio teszt
         public void UnioTest()
         {
-            int[] x = new int[] { 1, 2, 3, };
+            int[] x = new int[] { 1, 2, 3 };
             int[] y = new int[] { 3, 5, 7, 70 };
 
             int[] vart = new int[] { 1, 2, 3, 5, 7, 70 };
@@ -125,6 +125,34 @@ namespace L11_Halmazok_Tests
 
             Assert.That(A.Union(B), Is.EqualTo(Vart));
         }
+        [Test]
+        // Differencia Teszt
+        public void DiffTest()
+        {
+            int[] x = new int[] { 1, 2, 3, 5 };
+            int[] y = new int[] { 3, 5, 7, 70 };
 
+            int[] vart = new int[] { 1,2 };
+            SetOfInts A = new SetOfInts(x);
+            SetOfInts B = new SetOfInts(y);
+            SetOfInts Vart = new SetOfInts(vart);
+
+            Assert.That(A.Diff(B), Is.EqualTo(Vart));
+        }
+
+        [Test]
+        // Szimmertikus differencia Teszt
+        public void SymDiffTest()
+        {
+            int[] x = new int[] { 1, 2, 3, 5 };
+            int[] y = new int[] { 3, 5, 7, 70 };
+
+            int[] vart = new int[] { 1, 2, 7, 70 };
+            SetOfInts A = new SetOfInts(x);
+            SetOfInts B = new SetOfInts(y);
+            SetOfInts Vart = new SetOfInts(vart);
+
+            Assert.That(A.SymDiff(B), Is.EqualTo(Vart));
+        }
     }
 }

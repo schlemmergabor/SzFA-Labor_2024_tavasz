@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -204,7 +205,7 @@ namespace L11_Halmazok
             // a1[m1] -re kell a +végtelen
             // így csinálok egy újabb tömböt, ami 1-el nagyobb
             int[] a1 = new int[this.tömb.Length + 1];
-            
+
             // átmásolom az értékeket
             for (int ii = 0; ii < this.tömb.Length; ii++)
             {
@@ -220,7 +221,7 @@ namespace L11_Halmazok
             {
                 a2[jj] = other.tömb[jj];
             }
-            a2[other.tömb.Length ] = int.MaxValue;
+            a2[other.tömb.Length] = int.MaxValue;
 
             // eu lesz az eredemény tömb
             int[] b = new int[m1 + m2];
@@ -258,6 +259,63 @@ namespace L11_Halmazok
             return new SetOfInts(b);
         }
 
+        // Két halmaz Differenciálja
+        // Algoritmust lásd a PPT-ben!
+        public SetOfInts Diff(SetOfInts other)
+        {
+            int[] b = new int[this.tömb.Length];
+            int i = 0;
+            int j = 0;
+            int db = 0;
+            int m1 = this.tömb.Length;
+            int m2 = other.tömb.Length;
+            int[] a1 = this.tömb;
+            int[] a2 = other.tömb;
 
+            // indexelés miatt van < a <= helyett !!!
+            while ((i < m1) && (j < m2))
+            {
+                // figyeld meg, hogy milyen "szép", "elegáns"
+                // a ++ operátorok miatt az egész kód
+                if (a1[i] < a2[j]) b[db++] = a1[i++];
+                else if (a1[i] > a2[j]) j++;
+                // ez is egy "finom" rész... :)
+                else (i, j) = (i + 1, j + 1);
+            }
+
+            while (i < m1) b[db++] = a1[i++];
+
+            Array.Resize(ref b, db);
+            return new SetOfInts(b);
+        }
+
+        // két halmaz Szimmetrikus Differenciálja
+        // Algoritmust lásd PPT-ben
+        public SetOfInts SymDiff(SetOfInts other)
+        {
+            int m1 = this.tömb.Length;
+            int m2 = other.tömb.Length;
+            int i = 0;
+            int j = 0;
+            int db = 0;
+            int[] a1 = this.tömb;
+            int[] a2 = other.tömb;
+
+            int[] b = new int[m1 + m2];
+
+            while ((i < m1) && (j < m2))
+            {
+                if (a1[i] < a2[j]) b[db++] = a1[i++];
+                else if (a1[i] < a2[j]) b[db++] = a2[j++];
+                else (i, j) = (i + 1, j + 1);
+            }
+
+            while (i < m1) b[db++] = a1[i++];
+
+            while (j < m2) b[db++] = a2[j++];
+
+            Array.Resize(ref b, db);
+            return new SetOfInts(b);
+        }
     }
 }
